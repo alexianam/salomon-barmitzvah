@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bar Mitzvah de Salomon Cohen</title>
+
+  <!-- Aperçu WhatsApp / réseaux sociaux -->
+  <meta property="og:title" content="Bar Mitzvah de Salomon Cohen" />
+  <meta property="og:description" content="Alexia & Félix Cohen ont la joie de vous inviter à la Bar Mitzvah de leur fils Salomon" />
+  <meta property="og:image" content="https://alexianam.github.io/salomon-barmitzvah/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bar Mitzvah de Salomon Cohen" />
+  <meta name="twitter:description" content="Alexia & Félix Cohen ont la joie de vous inviter à la Bar Mitzvah de leur fils Salomon" />
+  <meta name="twitter:image" content="https://alexianam.github.io/salomon-barmitzvah/og-image.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes drawStar {
+      from { stroke-dashoffset: 1000; opacity: 0; }
+      to   { stroke-dashoffset: 0;    opacity: 1; }
+    }
+    @keyframes shimmer {
+      0%   { opacity: 1; }
+      50%  { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    body {
+      background: #f0ede6;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2.5rem 1rem 4rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      animation: fadeIn 0.8s ease both;
+    }
+
+    .card {
+      background: #faf8f3;
+      border: 3px solid #1a2e5a;
+      border-radius: 6px;
+      padding: 3rem 2.5rem 2.5rem;
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      animation: fadeInUp 0.9s ease 0.2s both;
+    }
+
+    /* Étoile qui tourne et apparaît */
+    @keyframes rotateStar {
+      0%   { transform: rotate(0deg) scale(0.4); opacity: 0; }
+      50%  { transform: rotate(380deg) scale(1.08); opacity: 1; }
+      70%  { transform: rotate(348deg) scale(0.96); }
+      85%  { transform: rotate(364deg) scale(1.02); }
+      100% { transform: rotate(360deg) scale(1); opacity: 1; }
+    }
+    .star-wrap svg {
+      animation: rotateStar 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+      transform-origin: center;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Éléments qui apparaissent en cascade */
+    .save-tag       { animation: fadeInUp 0.7s ease 1.0s both; }
+    .family-main    { animation: fadeInUp 0.7s ease 1.2s both; }
+    .invite-line    { animation: fadeInUp 0.7s ease 1.4s both; }
+    .name-fr        { animation: fadeInUp 0.7s ease 1.6s both; }
+    .name-he        { animation: fadeInUp 0.7s ease 1.8s both; }
+    .bar-mitzvah-line { animation: fadeInUp 0.7s ease 2.0s both; }
+    .event          { animation: fadeInUp 0.7s ease 2.2s both; }
+    .poll-section   { animation: fadeInUp 0.7s ease 2.6s both; }
+
+    .star-wrap { margin-bottom: 1.5rem; }
+
+    .save-tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #1a2e5a;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .family-main {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1a2e5a;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .family-kids {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: #9aa0b8;
+      margin-bottom: 0.75rem;
+    }
+
+    .invite-line {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #4a5a7a;
+      margin-bottom: 0.3rem;
+      line-height: 1.7;
+    }
+
+    .name-fr {
+      font-size: 40px;
+      font-weight: normal;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #1a2e5a;
+      margin: 0.6rem 0 0.25rem;
+    }
+
+    .name-he {
+      font-size: 22px;
+      letter-spacing: 4px;
+      color: #4a5a7a;
+      margin-bottom: 1.75rem;
+      direction: rtl;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .bar-mitzvah-line {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #1a2e5a;
+      margin-bottom: 2rem;
+    }
+
+    .rule { width: 48px; height: 1px; background: #1a2e5a; margin: 0 auto 2rem; opacity: 0.35; }
+    .rule-sm { width: 28px; height: 1px; background: #1a2e5a; margin: 0 auto 1.75rem; opacity: 0.2; }
+
+    .event { margin-bottom: 1.75rem; }
+
+    .event-tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #9aa0b8;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-date {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1a2e5a;
+      margin-bottom: 0.3rem;
+    }
+
+    .event-detail {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #4a5a7a;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+    }
+
+    .rsvp-note {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      color: #9aa0b8;
+      letter-spacing: 1.5px;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* ── SONDAGE ── */
+    .poll-section { margin-top: 2.5rem; }
+
+    .poll-heading {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #4a5a7a;
+      margin-bottom: 1.25rem;
+    }
+
+    .date-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.25rem; }
+
+    .date-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.85rem 1.1rem;
+      border: 0.5px solid #c8cfe0;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #faf8f3;
+      text-align: left;
+      transition: all 0.15s;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .date-btn:hover { background: #eef0f7; border-color: #1a2e5a; }
+    .date-btn.selected { border: 1.5px solid #1a2e5a; background: #eef0f7; }
+
+    .date-info { flex: 1; }
+
+    .date-main {
+      font-size: 13px;
+      font-weight: 500;
+      color: #1a2e5a;
+      letter-spacing: 0.5px;
+    }
+
+    .date-note {
+      font-size: 11px;
+      color: #9aa0b8;
+      margin-top: 2px;
+    }
+
+    .check {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1px solid #c8cfe0;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 11px;
+      color: transparent;
+      transition: all 0.15s;
+    }
+
+    .date-btn.selected .check {
+      background: #1a2e5a;
+      border-color: #1a2e5a;
+      color: #faf8f3;
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+    input, textarea {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: #1a2e5a;
+      background: #faf8f3;
+      border: 0.5px solid #c8cfe0;
+      border-radius: 4px;
+      padding: 10px 12px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    input:focus, textarea:focus { border-color: #1a2e5a; }
+
+    .form-full { margin-bottom: 8px; }
+    .form-full input, .form-full textarea { width: 100%; }
+    .form-grid input { width: 100%; }
+    textarea { resize: none; height: 64px; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: #1a2e5a;
+      color: #faf8f3;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 0.25rem;
+      transition: background 0.15s;
+    }
+
+    .submit-btn:hover { background: #0f1e3e; }
+
+    .success-msg {
+      text-align: center;
+      padding: 1.5rem 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      color: #4a5a7a;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+    }
+
+    .success-icon {
+      font-size: 28px;
+      color: #1a2e5a;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Tally embed placeholder */
+    .tally-placeholder {
+      background: #f0ede6;
+      border: 0.5px dashed #c8cfe0;
+      border-radius: 4px;
+      padding: 1.5rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      color: #9aa0b8;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.25rem 2rem; }
+      .name-fr { font-size: 32px; letter-spacing: 4px; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Étoile de David -->
+    <div class="star-wrap">
+      <svg width="64" height="68" viewBox="0 0 60 66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="30,2 57,49 3,49" fill="none" stroke="#1a2e5a" stroke-width="3.5" stroke-linejoin="round"/>
+        <polygon points="30,64 3,17 57,17" fill="none" stroke="#1a2e5a" stroke-width="3.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <span class="save-tag">Save the Date</span>
+
+    <p class="family-main">Alexia &amp; Félix Cohen</p>
+    <p class="family-main" style="font-size:11px;">ainsi que Billie et Roni</p>
+    <p class="invite-line">ont la joie de vous inviter à la Bar Mitzvah de</p>
+
+    <h1 class="name-fr">Salomon</h1>
+    <p class="name-he">שלמה</p>
+    <p class="bar-mitzvah-line">Bar Mitzvah · 5787</p>
+
+    <div class="rule"></div>
+
+    <div class="event">
+      <p class="event-tag">Montée à la Torah · Paris</p>
+      <p class="event-date">Jeudi 5 novembre 2026</p>
+      <p class="event-detail">10h00 · Synagogue Ancelle · Neuilly-sur-Seine</p>
+    </div>
+
+    <div class="rule-sm"></div>
+
+    <div class="event">
+      <p class="event-tag">Tiyoul &amp; Célébration · Israël</p>
+      <p class="event-date">Date à confirmer</p>
+      <p class="event-detail">Vacances scolaires 2027</p>
+    </div>
+
+    <p class="rsvp-note">Merci de nous indiquer votre disponibilité ci-dessous</p>
+
+    <!-- SONDAGE TALLY -->
+    <div class="poll-section">
+      <div class="rule" style="margin-bottom:1.5rem; opacity:0.2;"></div>
+      <iframe
+        data-tally-src="https://tally.so/embed/Bz0NpR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="300"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Intentions Bar Mitzvah Salomon"
+        style="border:none; min-height:300px;"
+      ></iframe>
+    </div>
+  </div>
+
+  <script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
