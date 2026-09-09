@@ -7,14 +7,747 @@
   <title>Bar Mitzvah de Salomon Cohen</title>
 
   <meta property="og:title" content="Bar Mitzvah de Salomon Cohen">
-  <meta property="og:image" content="og-image.png">
+  <meta property="og:image" content="og-image.png?v=3">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+:root {
+  --ivory: #fbf8f1;
+  --ivory-soft: #f7f2e8;
+  --paper: #fffdf9;
+  --navy: #083e75;
+  --navy-soft: #1f5f9d;
+  --pink: #ff0b83;
+  --orange: #ff6b00;
+  --cyan: #14c7db;
+  --line: rgba(8, 62, 117, 0.16);
+  --shadow: 0 10px 35px rgba(35, 48, 65, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ivory);
+}
+
+body {
+  margin: 0;
+  color: var(--navy);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.78), transparent 40%),
+    var(--ivory);
+  font-family: "Montserrat", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar {
+  position: relative;
+  z-index: 20;
+  background: rgba(251,248,241,.97);
+}
+
+.nav-shell {
+  min-height: 98px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 70px;
+  display: grid;
+  grid-template-columns: 1fr 190px 1fr;
+  align-items: center;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 68px;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  position: relative;
+  padding: 39px 0 29px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .25em;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 27px;
+  height: 2px;
+  background: var(--pink);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .22s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.logo-link {
+  position: relative;
+  align-self: stretch;
+}
+
+.site-logo {
+  position: absolute;
+  z-index: 30;
+  width: 158px;
+  height: 158px;
+  object-fit: contain;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,.04));
+}
+
+.music-button {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--navy);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(8,62,117,.13);
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.music-button:hover {
+  transform: translateY(-1px);
+}
+
+.music-button[aria-pressed="true"] {
+  opacity: .78;
+}
+
+.music-note {
+  font-size: 20px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  background: #ddc8a8;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+}
+
+.countdown-section {
+  padding: 20px 20px 23px;
+  text-align: center;
+  background: rgba(255,255,255,.18);
+}
+
+.eyebrow,
+.countdown-caption,
+.card-date {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .32em;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+}
+
+.countdown {
+  width: min(620px, 100%);
+  margin: 0 auto 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.countdown-cell {
+  position: relative;
+  min-width: 0;
+  padding: 0 20px;
+}
+
+.countdown-cell + .countdown-cell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: rgba(8,62,117,.2);
+}
+
+.countdown-number {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: .95;
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  letter-spacing: .28em;
+}
+
+.countdown-caption {
+  font-size: 12px;
+}
+
+.dates-section {
+  padding: 27px 48px 30px;
+  background:
+    linear-gradient(90deg, rgba(248,242,231,.72), rgba(255,255,255,.18) 50%, rgba(248,242,231,.72));
+}
+
+.dates-grid {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.dates-grid::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  bottom: 5px;
+  width: 1px;
+  background: rgba(8,62,117,.15);
+}
+
+.date-column {
+  min-height: 226px;
+  padding: 0 50px;
+  display: grid;
+  grid-template-rows: 27px 78px 26px 12px 29px 54px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.country-label {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: .15em;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.event-date {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 42px;
+  line-height: .94;
+  font-weight: 600;
+}
+
+.event-time {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .17em;
+}
+
+.small-rule {
+  width: 66px;
+  height: 3px;
+}
+
+.france-rule {
+  background: linear-gradient(90deg, var(--pink) 0 55%, var(--orange) 55%);
+}
+
+.israel-rule {
+  background: var(--orange);
+}
+
+.event-place {
+  margin: 0;
+  align-self: end;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .22em;
+}
+
+.address {
+  margin: 5px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: .09em;
+}
+
+.programme-section {
+  padding: 24px 48px 29px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0 0 11px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.tricolor-rule {
+  width: 138px;
+  height: 3px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    var(--pink) 0 34%,
+    var(--orange) 34% 68%,
+    var(--cyan) 68% 100%
+  );
+}
+
+.programme-grid {
+  max-width: 930px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.programme-card {
+  min-height: 378px;
+  padding: 19px 31px 23px;
+  border: 1px solid rgba(8,62,117,.1);
+  border-radius: 4px;
+  background: rgba(255,255,255,.58);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-head {
+  text-align: center;
+}
+
+.card-head .country-label {
+  margin-bottom: 8px;
+}
+
+.card-head h3 {
+  margin: 0 0 4px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.card-date {
+  font-size: 10px;
+  letter-spacing: .27em;
+}
+
+.timeline {
+  position: relative;
+  margin: 30px 0 0;
+  padding-left: 36px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(var(--pink), var(--orange));
+}
+
+.timeline-item {
+  position: relative;
+  min-height: 92px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-pink {
+  background: var(--pink);
+}
+
+.dot-orange {
+  background: var(--orange);
+}
+
+.timeline-time {
+  margin: 0 0 2px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.timeline-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.timeline-note {
+  margin: 4px 0 0;
+  color: var(--navy-soft);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.hourglass {
+  width: 31px;
+  height: 43px;
+  margin: 24px auto 14px;
+  position: relative;
+  border-top: 4px solid var(--orange);
+  border-bottom: 4px solid var(--orange);
+}
+
+.hourglass::before,
+.hourglass::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 2px;
+  background: var(--orange);
+  transform-origin: center;
+}
+
+.hourglass::before {
+  top: 8px;
+  transform: rotate(43deg);
+}
+
+.hourglass::after {
+  bottom: 8px;
+  transform: rotate(-43deg);
+}
+
+.israel-copy {
+  text-align: center;
+  color: var(--navy-soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.israel-copy p {
+  margin: 0 0 16px;
+}
+
+.card-rule {
+  margin-top: auto;
+}
+
+.site-footer {
+  min-height: 89px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-top: 1px solid rgba(8,62,117,.06);
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: .22em;
+}
+
+.footer-star {
+  position: absolute;
+  right: 46px;
+  width: 31px;
+  height: 34px;
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .nav-shell {
+    padding: 0 28px;
+    grid-template-columns: 1fr 150px 1fr;
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 28px;
+  }
+
+  .site-logo {
+    width: 142px;
+    height: 142px;
+  }
+
+  .date-column {
+    padding: 0 22px;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    min-height: 82px;
+  }
+
+  .nav-shell {
+    min-height: 82px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-left {
+    order: 1;
+  }
+
+  .logo-link {
+    order: 2;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 118px;
+    height: 115px;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .nav-right {
+    order: 3;
+  }
+
+  .site-logo {
+    width: 118px;
+    height: 118px;
+    top: 3px;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-left .nav-link:first-child {
+    display: block;
+    font-size: 9px;
+    padding: 30px 0 23px;
+    letter-spacing: .19em;
+  }
+
+  .nav-link::after {
+    bottom: 20px;
+  }
+
+  .music-button {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+  }
+
+  .hero {
+    margin-top: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    min-height: 182px;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .countdown-section {
+    padding: 18px 10px 20px;
+  }
+
+  .eyebrow,
+  .countdown-caption {
+    font-size: 10px;
+  }
+
+  .countdown-cell {
+    padding: 0 7px;
+  }
+
+  .countdown-number {
+    font-size: 34px;
+  }
+
+  .countdown-label {
+    font-size: 8px;
+    letter-spacing: .16em;
+  }
+
+  .dates-section {
+    padding: 28px 20px 24px;
+  }
+
+  .dates-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .dates-grid::before {
+    display: none;
+  }
+
+  .date-column {
+    min-height: 0;
+    padding: 22px 8px 26px;
+    grid-template-rows: auto;
+    gap: 8px;
+  }
+
+  .date-column + .date-column {
+    border-top: 1px solid var(--line);
+  }
+
+  .country-label {
+    font-size: 16px;
+  }
+
+  .event-date {
+    font-size: 37px;
+  }
+
+  .event-time-placeholder,
+  .address-placeholder {
+    display: none;
+  }
+
+  .event-place {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .address {
+    font-size: 12px;
+  }
+
+  .programme-section {
+    padding: 26px 16px 28px;
+  }
+
+  .section-heading h2 {
+    font-size: 37px;
+  }
+
+  .programme-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .programme-card {
+    min-height: 372px;
+    padding: 22px 24px 24px;
+  }
+
+  .card-head h3 {
+    font-size: 25px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .site-footer {
+    min-height: 82px;
+    padding: 0 58px 0 18px;
+    justify-content: flex-start;
+  }
+
+  .site-footer p {
+    font-size: 8px;
+    letter-spacing: .15em;
+    line-height: 1.5;
+  }
+
+  .footer-star {
+    right: 20px;
+    width: 27px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-image {
+    min-height: 172px;
+    object-position: 44% center;
+  }
+
+  .countdown-number {
+    font-size: 30px;
+  }
+
+  .countdown-label {
+    font-size: 7px;
+    letter-spacing: .12em;
+  }
+
+  .timeline {
+    padding-left: 31px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -26,7 +759,7 @@
       </div>
 
       <a class="logo-link" href="#accueil" aria-label="Retour à l'accueil">
-        <img src="logo-shlomo.png" alt="Logo Shlomo Bar Mitzvah" class="site-logo">
+        <img src="logo-shlomo.png?v=3" alt="Logo Shlomo Bar Mitzvah" class="site-logo">
       </a>
 
       <div class="nav-right">
@@ -37,12 +770,12 @@
       </div>
     </nav>
 
-    <audio id="backgroundMusic" src="music.m4a" preload="metadata" loop></audio>
+    <audio id="backgroundMusic" src="music.m4a?v=3" preload="metadata" loop></audio>
   </header>
 
   <main>
     <section class="hero" aria-label="Salomon Cohen Bar Mitzvah">
-      <img src="hero-salomon.jpg" alt="Salomon au Mur occidental à Jérusalem" class="hero-image">
+      <img src="hero-salomon.jpg?v=3" alt="Salomon au Mur occidental à Jérusalem" class="hero-image">
     </section>
 
     <section class="countdown-section" aria-label="Compte à rebours">
@@ -158,6 +891,71 @@
     </svg>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+(() => {
+  const target = new Date("2026-11-05T10:15:00+01:00").getTime();
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  const pad = (value) => String(value).padStart(2, "0");
+
+  function updateCountdown() {
+    const now = Date.now();
+    const distance = Math.max(0, target - now);
+
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
+
+    daysEl.textContent = String(days);
+    hoursEl.textContent = pad(hours);
+    minutesEl.textContent = pad(minutes);
+    secondsEl.textContent = pad(seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  const audio = document.getElementById("backgroundMusic");
+  const button = document.getElementById("musicButton");
+
+  async function playAudio() {
+    try {
+      await audio.play();
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("aria-label", "Couper la musique");
+    } catch (_) {
+      // Autoplay may be blocked until the user explicitly clicks the button.
+    }
+  }
+
+  function pauseAudio() {
+    audio.pause();
+    button.setAttribute("aria-pressed", "false");
+    button.setAttribute("aria-label", "Activer la musique");
+  }
+
+  button.addEventListener("click", async () => {
+    if (audio.paused) {
+      await playAudio();
+    } else {
+      pauseAudio();
+    }
+  });
+
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((item) => item.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+})();
+
+</script>
 </body>
 </html>
