@@ -1,14 +1,17 @@
-# Salomon Bar Mitzvah — fichiers du site
+UPLOAD GITHUB — VERSION 2
 
-À conserver dans le dépôt :
-- `music.m4a` (déjà présent)
-- `og-image.png` (déjà présent)
+À uploader / remplacer à la racine du dépôt salomon-barmitzvah :
+- index.html
+- styles.css
+- script.js
+- logo-shlomo.png
+- salomon-kotel.jpg
 
-Fichiers à uploader / remplacer :
-- `index.html`
-- `styles.css`
-- `script.js`
-- `logo-shlomo.png`
-- `hero-salomon.jpg`
+À CONSERVER dans le dépôt :
+- music.m4a
+- music.flac
+- og-image.png
 
-Le site utilise `music.m4a` directement à la racine du dépôt.
+Ensuite :
+Add file → Upload files → glisser les fichiers → Commit changes.
+Puis attendre 1 à 3 minutes et faire Cmd+Shift+R (Mac) ou Ctrl+Shift+R (Windows).
