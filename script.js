@@ -1,44 +1,63 @@
 (() => {
-  // Countdown to the France ceremony, local Paris time.
-  // 5 Nov 2026 at 10:15 CET = 09:15 UTC.
-  const target = new Date("2026-11-05T09:15:00Z").getTime();
+  const target = new Date("2026-11-05T10:15:00+01:00").getTime();
 
-  const ids = ["days","hours","minutes","seconds"];
-  const els = Object.fromEntries(ids.map(id => [id, document.getElementById(id)]));
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
 
-  function tick(){
-    const diff = Math.max(0, target - Date.now());
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-    els.days.textContent = days;
-    els.hours.textContent = String(hours).padStart(2,"0");
-    els.minutes.textContent = String(minutes).padStart(2,"0");
-    els.seconds.textContent = String(seconds).padStart(2,"0");
+  const pad = (value) => String(value).padStart(2, "0");
+
+  function updateCountdown() {
+    const now = Date.now();
+    const distance = Math.max(0, target - now);
+
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
+
+    daysEl.textContent = String(days);
+    hoursEl.textContent = pad(hours);
+    minutesEl.textContent = pad(minutes);
+    secondsEl.textContent = pad(seconds);
   }
-  tick();
-  setInterval(tick, 1000);
 
-  const btn = document.getElementById("musicBtn");
-  const music = document.getElementById("bgMusic");
-  let playing = false;
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-  btn.addEventListener("click", async () => {
-    try{
-      if(!playing){
-        await music.play();
-        playing = true;
-        btn.textContent = "♪";
-        btn.setAttribute("aria-label","Couper la musique");
-      }else{
-        music.pause();
-        playing = false;
-        btn.textContent = "♫";
-        btn.setAttribute("aria-label","Activer la musique");
-      }
-    }catch(e){
-      alert("Le fichier music.m4a doit rester présent dans le dépôt GitHub.");
+  const audio = document.getElementById("backgroundMusic");
+  const button = document.getElementById("musicButton");
+
+  async function playAudio() {
+    try {
+      await audio.play();
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("aria-label", "Couper la musique");
+    } catch (_) {
+      // Autoplay may be blocked until the user explicitly clicks the button.
     }
+  }
+
+  function pauseAudio() {
+    audio.pause();
+    button.setAttribute("aria-pressed", "false");
+    button.setAttribute("aria-label", "Activer la musique");
+  }
+
+  button.addEventListener("click", async () => {
+    if (audio.paused) {
+      await playAudio();
+    } else {
+      pauseAudio();
+    }
+  });
+
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((item) => item.classList.remove("active"));
+      link.classList.add("active");
+    });
   });
 })();

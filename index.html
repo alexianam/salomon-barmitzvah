@@ -3,132 +3,160 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Salomon Cohen — Bar Mitzvah</title>
-  <meta name="description" content="Bar Mitzvah de Salomon Cohen — Neuilly-sur-Seine, Jérusalem & Tel Aviv.">
+  <meta name="theme-color" content="#fbf8f1">
+  <title>Bar Mitzvah de Salomon Cohen</title>
+
+  <meta property="og:title" content="Bar Mitzvah de Salomon Cohen">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <nav class="nav wrap" aria-label="Navigation principale">
-      <a class="nav-link active" href="#accueil">Accueil</a>
-      <a class="nav-link" href="#programme">Le programme</a>
 
-      <a href="#accueil" class="logo-link" aria-label="Retour à l'accueil">
-        <img src="logo-shlomo.png" alt="Shlomo Bar Mitzvah" class="logo">
+<body>
+  <header class="topbar" id="accueil">
+    <nav class="nav-shell" aria-label="Navigation principale">
+      <div class="nav-left">
+        <a class="nav-link active" href="#accueil">ACCUEIL</a>
+        <a class="nav-link" href="#programme">LE PROGRAMME</a>
+      </div>
+
+      <a class="logo-link" href="#accueil" aria-label="Retour à l'accueil">
+        <img src="logo-shlomo.png" alt="Logo Shlomo Bar Mitzvah" class="site-logo">
       </a>
 
-      <a class="nav-link" href="#infos">Infos pratiques</a>
-      <a class="nav-link" href="#photos">Photos</a>
-      <button class="music-btn" id="musicBtn" aria-label="Activer ou couper la musique" title="Musique">♫</button>
+      <div class="nav-right">
+        <a class="nav-link" href="#infos-pratiques">INFOS PRATIQUES</a>
+        <button class="music-button" id="musicButton" type="button" aria-label="Activer ou couper la musique" aria-pressed="false">
+          <span class="music-note" aria-hidden="true">♫</span>
+        </button>
+      </div>
     </nav>
+
+    <audio id="backgroundMusic" src="music.m4a" preload="metadata" loop></audio>
   </header>
 
-  <main id="accueil">
-    <section class="hero wrap">
-      <div class="identity">
-        <h1>SALOMON COHEN</h1>
-        <div class="subtitle">BAR MITZVAH</div>
-        <div class="accent-line" aria-hidden="true"></div>
+  <main>
+    <section class="hero" aria-label="Salomon Cohen Bar Mitzvah">
+      <img src="hero-salomon.jpg" alt="Salomon au Mur occidental à Jérusalem" class="hero-image">
+    </section>
+
+    <section class="countdown-section" aria-label="Compte à rebours">
+      <p class="eyebrow">PLUS QUE</p>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-cell">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-label">JOURS</span>
+        </div>
+        <div class="countdown-cell">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">HEURES</span>
+        </div>
+        <div class="countdown-cell">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">MINUTES</span>
+        </div>
+        <div class="countdown-cell">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">SECONDES</span>
+        </div>
       </div>
 
+      <p class="countdown-caption">AVANT LE 5 NOVEMBRE 2026</p>
+    </section>
+
+    <section class="dates-section" id="infos-pratiques">
       <div class="dates-grid">
-        <article class="event event-france">
-          <div class="country pink">FRANCE</div>
-          <h2>5 NOVEMBRE 2026</h2>
-          <div class="time">10H15</div>
-          <div class="small-line france-line" aria-hidden="true"></div>
-          <p class="venue">SYNAGOGUE DE NEUILLY</p>
-          <p>12 rue Ancelle</p>
-          <p>92200 Neuilly-sur-Seine</p>
+        <article class="date-column france-column">
+          <p class="country-label pink">FRANCE</p>
+          <h2 class="event-date">5 NOVEMBRE<br>2026</h2>
+          <p class="event-time">10H15</p>
+          <div class="small-rule france-rule" aria-hidden="true"></div>
+          <h3 class="event-place">SYNAGOGUE DE NEUILLY</h3>
+          <p class="address">12 rue Ancelle<br>92200 Neuilly-sur-Seine</p>
         </article>
 
-        <div class="divider" aria-hidden="true"></div>
-
-        <article class="event event-israel">
-          <div class="country orange">ISRAËL</div>
-          <h2>15 &amp; 16 AVRIL 2027</h2>
-          <div class="small-line israel-line" aria-hidden="true"></div>
-          <p class="venue">JÉRUSALEM &amp; TEL AVIV</p>
+        <article class="date-column israel-column">
+          <p class="country-label orange">ISRAËL</p>
+          <h2 class="event-date">15 &amp; 16 AVRIL<br>2027</h2>
+          <p class="event-time event-time-placeholder" aria-hidden="true">&nbsp;</p>
+          <div class="small-rule israel-rule" aria-hidden="true"></div>
+          <h3 class="event-place">JÉRUSALEM &amp; TEL AVIV</h3>
+          <p class="address address-placeholder" aria-hidden="true">&nbsp;<br>&nbsp;</p>
         </article>
       </div>
-
-      <figure class="kotel-photo">
-        <img src="salomon-kotel.jpg" alt="Salomon devant le Mur occidental à Jérusalem">
-      </figure>
-
-      <section class="countdown-section" aria-label="Compte à rebours">
-        <div class="countdown-title">PLUS QUE</div>
-        <div class="countdown" id="countdown">
-          <div class="count-card"><span id="days">--</span><small>JOURS</small></div>
-          <div class="count-card"><span id="hours">--</span><small>HEURES</small></div>
-          <div class="count-card"><span id="minutes">--</span><small>MINUTES</small></div>
-          <div class="count-card"><span id="seconds">--</span><small>SECONDES</small></div>
-        </div>
-        <div class="accent-line bottom-accent" aria-hidden="true"></div>
-        <a class="discover" href="#programme">DÉCOUVRIR LE PROGRAMME <span>⌄</span></a>
-      </section>
     </section>
 
-    <section id="programme" class="section alt">
-      <div class="wrap content-wrap">
-        <p class="eyebrow">LE PROGRAMME</p>
-        <h2>Deux rendez-vous</h2>
-        <div class="program-grid">
-          <article>
-            <h3>Neuilly — 5 novembre 2026</h3>
-            <p><strong>10h15</strong> — Synagogue de Neuilly, 12 rue Ancelle.</p>
-            <p class="muted">Le détail de la journée peut être complété ici dès que tu veux l’afficher aux invités.</p>
-          </article>
-          <article>
-            <h3>Israël — 15 &amp; 16 avril 2027</h3>
-            <p>Jérusalem &amp; Tel Aviv.</p>
-            <p class="muted">Le programme détaillé des deux jours peut être ajouté ici au fur et à mesure de sa finalisation.</p>
-          </article>
-        </div>
+    <section class="programme-section" id="programme">
+      <div class="section-heading">
+        <h2>LE PROGRAMME</h2>
+        <div class="tricolor-rule" aria-hidden="true"></div>
       </div>
-    </section>
 
-    <section id="infos" class="section">
-      <div class="wrap content-wrap">
-        <p class="eyebrow">INFOS PRATIQUES</p>
-        <h2>À retenir</h2>
-        <div class="info-grid">
-          <article>
-            <h3>France</h3>
-            <p>Jeudi 5 novembre 2026 à 10h15</p>
-            <p>Synagogue de Neuilly</p>
-            <p>12 rue Ancelle, 92200 Neuilly-sur-Seine</p>
-          </article>
-          <article>
-            <h3>Israël</h3>
-            <p>15 &amp; 16 avril 2027</p>
-            <p>Jérusalem &amp; Tel Aviv</p>
-          </article>
-        </div>
-      </div>
-    </section>
+      <div class="programme-grid">
+        <article class="programme-card france-card">
+          <div class="card-head">
+            <p class="country-label pink">FRANCE</p>
+            <h3>CÉRÉMONIE &amp; BRUNCH</h3>
+            <p class="card-date">JEUDI 5 NOVEMBRE 2026</p>
+          </div>
 
-    <section id="photos" class="section alt">
-      <div class="wrap content-wrap">
-        <p class="eyebrow">PHOTOS</p>
-        <h2>À suivre</h2>
-        <p class="muted">Cette section est prête : tu pourras y ajouter les photos que tu voudras partager avant ou après la Bar Mitzvah.</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-dot dot-pink" aria-hidden="true"></span>
+              <div>
+                <p class="timeline-time pink">10h15</p>
+                <p class="timeline-title">Tefilot du matin et lectures de la paracha</p>
+                <p class="timeline-note">À la synagogue de Neuilly</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-dot dot-orange" aria-hidden="true"></span>
+              <div>
+                <p class="timeline-time pink">À partir de 12h00</p>
+                <p class="timeline-title">Brunch en musique</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tricolor-rule card-rule" aria-hidden="true"></div>
+        </article>
+
+        <article class="programme-card israel-card">
+          <div class="card-head">
+            <p class="country-label orange">ISRAËL</p>
+            <h3>DÉTAILS À VENIR</h3>
+            <p class="card-date">JEUDI 15 &amp; VENDREDI 16 AVRIL 2027</p>
+          </div>
+
+          <div class="hourglass" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <div class="israel-copy">
+            <p>Le programme détaillé est encore en cours<br class="desktop-only"> de finalisation mais les dates sont confirmées !</p>
+            <p>Nous mettrons le lien vers l’hôtel dès que nous aurons statué sur le lieu de l’événement, afin que chacun puisse réserver ses chambres.</p>
+          </div>
+
+          <div class="tricolor-rule card-rule" aria-hidden="true"></div>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">Salomon Cohen · Bar Mitzvah</div>
+  <footer class="site-footer">
+    <p>SALOMON COHEN · BAR MITZVAH 2026 – 2027</p>
+    <svg class="footer-star" viewBox="0 0 60 66" aria-hidden="true">
+      <polygon points="30,2 57,49 3,49" fill="none" stroke="currentColor" stroke-width="3"/>
+      <polygon points="30,64 3,17 57,17" fill="none" stroke="currentColor" stroke-width="3"/>
+    </svg>
   </footer>
-
-  <!-- Ajoute un fichier music.m4a si tu veux conserver la musique du site.
-       Le bouton ♫ est déjà câblé dans script.js. -->
-  <audio id="bgMusic" loop preload="none">
-    <source src="music.m4a" type="audio/mp4">
-  </audio>
 
   <script src="script.js"></script>
 </body>
