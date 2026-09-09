@@ -1,17 +1,18 @@
-UPLOAD GITHUB — VERSION 2
+VERSION TYPOGRAPHIES + LOGO NETTOYÉ
 
-À uploader / remplacer à la racine du dépôt salomon-barmitzvah :
+Modifications uniquement graphiques, sans changement de structure :
+- Montserrat pour SALOMON COHEN, menu, BAR MITZVAH, lieux et textes secondaires.
+- DM Serif Display pour les grandes dates et les éléments serif du programme.
+- Espacements de lettres réduits.
+- Logo Shlomo nettoyé avec vraie transparence alpha : plus de fond / mur / rectangle parasite.
+
+À uploader à la racine du dépôt GitHub :
 - index.html
 - styles.css
 - script.js
 - logo-shlomo.png
 - salomon-kotel.jpg
 
-À CONSERVER dans le dépôt :
+À conserver :
 - music.m4a
-- music.flac
 - og-image.png
-
-Ensuite :
-Add file → Upload files → glisser les fichiers → Commit changes.
-Puis attendre 1 à 3 minutes et faire Cmd+Shift+R (Mac) ou Ctrl+Shift+R (Windows).
