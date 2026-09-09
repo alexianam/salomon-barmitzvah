@@ -1,0 +1,228 @@
+:root{
+  --cream:#fbf8f1;
+  --cream-2:#f7f1e8;
+  --navy:#0b315c;
+  --pink:#ff2b87;
+  --orange:#ff7c2e;
+  --cyan:#20b7dc;
+  --line:#d9d3c8;
+  --text:#0b315c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:"DM Sans",Arial,sans-serif;
+  font-weight:300;
+  letter-spacing:.02em;
+}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+.site-header{
+  position:relative;
+  padding:24px 0 8px;
+  background:var(--cream);
+}
+.nav{
+  min-height:170px;
+  display:grid;
+  grid-template-columns:1fr 1.25fr 240px 1.4fr .8fr 48px;
+  gap:24px;
+  align-items:start;
+}
+.nav-link{
+  color:var(--navy);
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.2em;
+  padding-top:26px;
+  white-space:nowrap;
+}
+.nav-link.active{position:relative}
+.nav-link.active:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-11px;
+  width:54px;
+  height:2px;
+  background:var(--pink);
+}
+.logo-link{justify-self:center;align-self:start}
+.logo{width:220px;height:auto}
+.music-btn{
+  width:42px;height:42px;border-radius:50%;
+  border:0;background:var(--navy);color:white;
+  font-size:21px;cursor:pointer;margin-top:10px;
+}
+.hero{padding:20px 0 70px;text-align:center}
+.identity h1{
+  margin:12px 0 4px;
+  font-size:clamp(38px,5.5vw,72px);
+  font-weight:300;
+  letter-spacing:.12em;
+}
+.subtitle{
+  font-size:18px;
+  letter-spacing:.36em;
+  margin-bottom:26px;
+}
+.accent-line{
+  width:126px;height:3px;margin:0 auto;
+  background:linear-gradient(90deg,var(--pink) 0 35%,var(--orange) 35% 68%,var(--cyan) 68%);
+}
+.dates-grid{
+  margin:62px auto 48px;
+  display:grid;
+  grid-template-columns:1fr 1px 1fr;
+  max-width:880px;
+  gap:50px;
+  align-items:center;
+}
+.divider{height:210px;background:var(--line)}
+.event{min-height:220px}
+.country{
+  font-size:17px;
+  letter-spacing:.28em;
+  font-weight:400;
+  margin-bottom:10px;
+}
+.pink{color:var(--pink)} .orange{color:var(--orange)}
+.event h2{
+  margin:0;
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(26px,3vw,37px);
+}
+.time{
+  margin-top:8px;
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-size:28px;
+}
+.small-line{width:58px;height:2px;margin:20px auto}
+.france-line{background:linear-gradient(90deg,var(--pink),var(--orange))}
+.israel-line{background:var(--orange)}
+.event p{
+  margin:6px 0;
+  font-size:14px;
+  letter-spacing:.2em;
+}
+.event .venue{font-weight:500;margin-top:0}
+.kotel-photo{
+  margin:0 auto;
+  width:min(520px,76vw);
+}
+.kotel-photo img{width:100%;height:auto}
+.countdown-section{padding-top:34px}
+.countdown-title{
+  letter-spacing:.34em;
+  font-size:14px;
+  margin-bottom:14px;
+}
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  width:min(520px,86vw);
+  margin:0 auto;
+}
+.count-card{
+  background:rgba(255,255,255,.58);
+  padding:20px 10px 16px;
+  border-radius:4px;
+}
+.count-card span{
+  display:block;
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-size:38px;
+  line-height:1;
+}
+.count-card small{
+  display:block;
+  margin-top:12px;
+  font-size:10px;
+  letter-spacing:.2em;
+}
+.bottom-accent{margin-top:24px}
+.discover{
+  display:inline-flex;
+  flex-direction:column;
+  gap:5px;
+  margin-top:34px;
+  color:var(--navy);
+  text-decoration:none;
+  font-size:12px;
+  letter-spacing:.25em;
+}
+.discover span{font-size:24px}
+.section{padding:90px 0}
+.section.alt{background:var(--cream-2)}
+.content-wrap{max-width:900px}
+.eyebrow{
+  color:var(--pink);
+  font-size:12px;
+  letter-spacing:.28em;
+  margin:0 0 12px;
+}
+.section h2{
+  font-family:"Libre Baskerville",Georgia,serif;
+  font-size:40px;
+  font-weight:400;
+  margin:0 0 42px;
+}
+.program-grid,.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+}
+.section h3{
+  font-size:17px;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+.section p{line-height:1.7}
+.muted{opacity:.68}
+.footer{
+  padding:36px 0;
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  font-size:12px;
+  letter-spacing:.18em;
+}
+@media (max-width:850px){
+  .nav{
+    grid-template-columns:1fr 120px 48px;
+    min-height:130px;
+    gap:14px;
+    align-items:start;
+  }
+  .nav-link{display:none}
+  .logo-link{grid-column:2}
+  .logo{width:145px}
+  .music-btn{grid-column:3;justify-self:end}
+  .identity h1{letter-spacing:.08em}
+  .dates-grid{
+    grid-template-columns:1fr;
+    gap:26px;
+    margin-top:46px;
+  }
+  .divider{display:none}
+  .event{min-height:0;padding:0 10px}
+  .event-israel{padding-top:24px;border-top:1px solid var(--line)}
+  .program-grid,.info-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .hero{padding-top:5px}
+  .subtitle{font-size:14px}
+  .countdown{gap:7px}
+  .count-card{padding:16px 5px 13px}
+  .count-card span{font-size:29px}
+  .count-card small{font-size:8px;letter-spacing:.12em}
+  .kotel-photo{width:82vw}
+  .section{padding:62px 0}
+  .section h2{font-size:32px}
+}
