@@ -402,28 +402,18 @@ a { color: inherit; text-decoration: none; }
   font-style: italic;
 }
 
-.hourglass {
-  width: 30px;
+.coming-icon {
+  width: 34px;
   height: 42px;
   margin: 27px auto 16px;
-  border-top: 4px solid var(--orange);
-  border-bottom: 4px solid var(--orange);
-  position: relative;
+  color: var(--orange);
 }
 
-.hourglass::before,
-.hourglass::after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  right: 3px;
-  height: 2px;
-  background: var(--orange);
-  transform-origin: center;
+.coming-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-
-.hourglass::before { top: 8px; transform: rotate(43deg); }
-.hourglass::after { bottom: 8px; transform: rotate(-43deg); }
 
 .israel-copy {
   text-align: center;
