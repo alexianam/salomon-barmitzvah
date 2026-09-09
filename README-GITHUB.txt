@@ -1,18 +1,19 @@
-VERSION TYPOGRAPHIES + LOGO NETTOYÉ
+CORRECTION LOGO HD + SABLIER
 
-Modifications uniquement graphiques, sans changement de structure :
-- Montserrat pour SALOMON COHEN, menu, BAR MITZVAH, lieux et textes secondaires.
-- DM Serif Display pour les grandes dates et les éléments serif du programme.
-- Espacements de lettres réduits.
-- Logo Shlomo nettoyé avec vraie transparence alpha : plus de fond / mur / rectangle parasite.
+Ce paquet part de la version actuelle du site.
 
-À uploader à la racine du dépôt GitHub :
+Corrections :
+- le site pointe désormais vers `logo-shlomo-hd.png`, la version HD 1254x1254 ;
+- nouveau nom de fichier pour éviter que GitHub / le navigateur ne réutilise l'ancien logo flou en cache ;
+- cache-busting ajouté au CSS et au JS ;
+- sablier remplacé par un petit SVG 28x34 px avec dimensions forcées dans le HTML ET le CSS.
+
+À uploader / remplacer à la racine :
 - index.html
 - styles.css
 - script.js
-- logo-shlomo.png
+- logo-shlomo-hd.png
 - salomon-kotel.jpg
 
-À conserver :
-- music.m4a
-- og-image.png
+Tu peux ensuite supprimer l'ancien `logo-shlomo.png` si tu veux.
+Conserver `music.m4a` et `og-image.png`.

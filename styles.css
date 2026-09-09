@@ -91,6 +91,10 @@ a { color: inherit; text-decoration: none; }
   top: 8px;
   transform: translateX(-50%);
   z-index: 15;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+  image-rendering: auto;
 }
 
 .music-button {
@@ -403,15 +407,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 .coming-icon {
-  width: 34px;
-  height: 42px;
-  margin: 27px auto 16px;
+  width: 28px !important;
+  height: 34px !important;
+  margin: 24px auto 17px !important;
   color: var(--orange);
+  flex: 0 0 auto;
 }
 
 .coming-icon svg {
-  width: 100%;
-  height: 100%;
+  width: 28px !important;
+  height: 34px !important;
+  max-width: 28px !important;
+  max-height: 34px !important;
   display: block;
 }
 
@@ -597,8 +604,3 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-.site-logo {
-  background: transparent;
-  box-shadow: none;
-  filter: none;
-}
