@@ -1,3 +1,46 @@
+(() => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  const forceTop = () => {
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    const active = document.activeElement;
+    if (active && typeof active.blur === "function" && active !== document.body) {
+      active.blur();
+    }
+
+    document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  };
+
+  // Some mobile browsers restore position after fonts/images/layout are finished.
+  // Keep pinning the initial page to the top for the first 2 seconds only.
+  const delays = [0, 25, 75, 150, 300, 600, 1000, 1500, 2000];
+
+  forceTop();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    delays.forEach((delay) => setTimeout(forceTop, delay));
+  }, { once: true });
+
+  window.addEventListener("load", () => {
+    delays.forEach((delay) => setTimeout(forceTop, delay));
+  }, { once: true });
+
+  window.addEventListener("pageshow", () => {
+    delays.forEach((delay) => setTimeout(forceTop, delay));
+  });
+
+  window.addEventListener("popstate", () => {
+    setTimeout(forceTop, 0);
+  });
+})();
+
 
 (() => {
   if ("scrollRestoration" in history) {

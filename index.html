@@ -19,15 +19,26 @@
 
 
   <script>
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-    window.scrollTo(0, 0);
+    (function () {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Remove any anchor before the document body is parsed.
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+
+      document.documentElement.style.scrollBehavior = "auto";
+      document.documentElement.scrollTop = 0;
+      window.scrollTo(0, 0);
+    })();
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260909-1615">
+  <link rel="stylesheet" href="styles.css?v=20260909-1625">
 </head>
 
 <body>
@@ -181,6 +192,6 @@
     </svg>
   </footer>
 
-  <script src="script.js?v=20260909-1615"></script>
+  <script src="script.js?v=20260909-1625"></script>
 </body>
 </html>

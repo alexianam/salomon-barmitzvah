@@ -1,20 +1,21 @@
-VERSION V5 — APERÇU WHATSAPP + OUVERTURE TOUT EN HAUT
+VERSION V6 — CORRECTION OUVERTURE EN HAUT
 
-Corrections :
-- aperçu WhatsApp : logo plus grand et légèrement plus bas ;
-- nouvelle image `og-image-whatsapp-v3.png` pour casser le cache ;
-- ouverture du site forcée tout en haut dès le <head>, puis à DOMContentLoaded, load et pageshow ;
-- suppression d'un éventuel #ancre au chargement ;
-- scroll-behavior passé en auto pour éviter toute animation parasite à l'ouverture.
+Cette version conserve tout le design et l'aperçu WhatsApp validés.
+
+Correction supplémentaire :
+- suppression de toute ancre (#programme, etc.) avant même que le body ne soit chargé ;
+- désactivation de la restauration native du scroll ;
+- désactivation du scroll anchoring du navigateur ;
+- remise en haut répétée pendant les 2 premières secondes, le temps que les polices et images se chargent ;
+- remise en haut également lors d'un retour de page / pageshow.
 
 À uploader / remplacer :
 - index.html
 - styles.css
 - script.js
+
+Les autres fichiers peuvent rester tels quels :
 - logo-shlomo-hd.png
 - salomon-kotel.jpg
 - og-image-whatsapp-v3.png
-
-À conserver :
 - music.m4a
-- music.flac
