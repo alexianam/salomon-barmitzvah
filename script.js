@@ -1,4 +1,23 @@
 (() => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  function forceTopOnOpen() {
+    const isTopHash = !window.location.hash || window.location.hash === "#" || window.location.hash === "#accueil" || window.location.hash === "#top";
+    if (isTopHash) {
+      window.scrollTo(0, 0);
+      if (window.location.hash === "#accueil" || window.location.hash === "#top" || window.location.hash === "#") {
+        history.replaceState(null, "", window.location.pathname);
+      }
+    }
+  }
+
+  window.addEventListener("load", forceTopOnOpen);
+  window.addEventListener("pageshow", forceTopOnOpen);
+})();
+
+(() => {
   const target = new Date("2026-11-05T10:15:00+01:00").getTime();
 
   const $ = (id) => document.getElementById(id);

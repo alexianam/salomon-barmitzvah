@@ -409,7 +409,7 @@ a { color: inherit; text-decoration: none; }
 .coming-icon {
   width: 28px !important;
   height: 34px !important;
-  margin: 24px auto 17px !important;
+  margin: 18px auto 12px !important;
   color: var(--orange);
   flex: 0 0 auto;
 }
@@ -604,3 +604,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 
+
+@media (max-width: 760px) {
+  .nav-left .nav-link:first-child::after,
+  .nav-left .nav-link:first-child:hover::after,
+  .nav-left .nav-link:first-child.active::after {
+    display: none !important;
+    content: none !important;
+    transform: none !important;
+  }
+}

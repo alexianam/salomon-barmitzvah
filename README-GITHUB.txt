@@ -1,19 +1,24 @@
-CORRECTION LOGO HD + SABLIER
+VERSION V4 — MOBILE + TEXTE PROGRAMME
 
-Ce paquet part de la version actuelle du site.
+Corrections ajoutées :
+- sur mobile, ACCUEIL reste visible mais sans le trait rose parasite ;
+- texte France corrigé en :
+  "Tefila du matin et lecture de la Paracha Hayé Sarah"
 
-Corrections :
-- le site pointe désormais vers `logo-shlomo-hd.png`, la version HD 1254x1254 ;
-- nouveau nom de fichier pour éviter que GitHub / le navigateur ne réutilise l'ancien logo flou en cache ;
-- cache-busting ajouté au CSS et au JS ;
-- sablier remplacé par un petit SVG 28x34 px avec dimensions forcées dans le HTML ET le CSS.
+Cette version conserve aussi :
+- le logo HD ;
+- le petit sablier ;
+- le nouvel aperçu WhatsApp ;
+- l'ouverture du site en haut de page.
 
-À uploader / remplacer à la racine :
+À uploader / remplacer :
 - index.html
 - styles.css
 - script.js
 - logo-shlomo-hd.png
 - salomon-kotel.jpg
+- og-image-whatsapp-v2.png
 
-Tu peux ensuite supprimer l'ancien `logo-shlomo.png` si tu veux.
-Conserver `music.m4a` et `og-image.png`.
+À conserver :
+- music.m4a
+- music.flac
