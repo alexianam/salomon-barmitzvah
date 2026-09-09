@@ -1,15 +1,11 @@
-VERSION V4 — MOBILE + TEXTE PROGRAMME
+VERSION V5 — APERÇU WHATSAPP + OUVERTURE TOUT EN HAUT
 
-Corrections ajoutées :
-- sur mobile, ACCUEIL reste visible mais sans le trait rose parasite ;
-- texte France corrigé en :
-  "Tefila du matin et lecture de la Paracha Hayé Sarah"
-
-Cette version conserve aussi :
-- le logo HD ;
-- le petit sablier ;
-- le nouvel aperçu WhatsApp ;
-- l'ouverture du site en haut de page.
+Corrections :
+- aperçu WhatsApp : logo plus grand et légèrement plus bas ;
+- nouvelle image `og-image-whatsapp-v3.png` pour casser le cache ;
+- ouverture du site forcée tout en haut dès le <head>, puis à DOMContentLoaded, load et pageshow ;
+- suppression d'un éventuel #ancre au chargement ;
+- scroll-behavior passé en auto pour éviter toute animation parasite à l'ouverture.
 
 À uploader / remplacer :
 - index.html
@@ -17,7 +13,7 @@ Cette version conserve aussi :
 - script.js
 - logo-shlomo-hd.png
 - salomon-kotel.jpg
-- og-image-whatsapp-v2.png
+- og-image-whatsapp-v3.png
 
 À conserver :
 - music.m4a

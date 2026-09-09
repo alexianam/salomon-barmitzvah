@@ -1,21 +1,36 @@
+
 (() => {
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
 
-  function forceTopOnOpen() {
-    const isTopHash = !window.location.hash || window.location.hash === "#" || window.location.hash === "#accueil" || window.location.hash === "#top";
-    if (isTopHash) {
-      window.scrollTo(0, 0);
-      if (window.location.hash === "#accueil" || window.location.hash === "#top" || window.location.hash === "#") {
-        history.replaceState(null, "", window.location.pathname);
-      }
-    }
+  const forceTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
+  // On a fresh/opened link, always start at the top.
+  if (location.hash) {
+    history.replaceState(null, "", location.pathname + location.search);
   }
 
-  window.addEventListener("load", forceTopOnOpen);
-  window.addEventListener("pageshow", forceTopOnOpen);
+  forceTop();
+  document.addEventListener("DOMContentLoaded", forceTop, { once: true });
+  window.addEventListener("load", () => {
+    forceTop();
+    requestAnimationFrame(forceTop);
+    setTimeout(forceTop, 0);
+    setTimeout(forceTop, 100);
+    setTimeout(forceTop, 350);
+  }, { once: true });
+
+  window.addEventListener("pageshow", () => {
+    forceTop();
+    setTimeout(forceTop, 50);
+  });
 })();
+
 
 (() => {
   const target = new Date("2026-11-05T10:15:00+01:00").getTime();
