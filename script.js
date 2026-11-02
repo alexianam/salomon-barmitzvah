@@ -76,7 +76,7 @@
 
 
 (() => {
-  const target = new Date("2026-11-05T10:15:00+01:00").getTime();
+  const target = new Date("2026-11-05T10:00:00+01:00").getTime();
 
   const $ = (id) => document.getElementById(id);
   const pad = (v) => String(v).padStart(2, "0");
